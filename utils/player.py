@@ -13,10 +13,12 @@ class Player:
         self.number_of_cards = 0
 
     def play(self):
-        number = int(input(f"\n{self.name}, you have {len(self.cards)} cards left, choose the card to be played : "))
+        print("\n")
+        print(*self.cards, sep = ',')
+        number = int(input(f"{self.name}, you have {len(self.cards)} cards left, choose the card to be played : "))
         card = self.cards[number]
         self.history += [card]
-        print(f"{self.name} Turn:{self.turn_count} played : {card.value} {card.icon}")
+        print(f"{self.name} Round : {self.turn_count} Played Card : {card.value} {card.icon}")
         return card 
 
     def __str__(self):
@@ -29,11 +31,11 @@ class Deck():
         self.cards = []  # cards contains LIST OF INSTANCES OF "Card"
 
     def fill_deck(self):
-        icon = "♥, ♦, ♣, ♠".split()
-        value = "A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K".split()
+        icon = "♥ ♦ ♣ ♠".split()
+        value = "A 2 3 4 5 6 7 8 9 10 J Q K".split()
         for i in icon:
             for j in value:
-               deck = Card(i,j)  
+               deck = Card(j,i)  # Passing the VALUE first and then the ICON
                self.cards.append(deck)   # cards should contain "52 cards at the end"
 
         #  self.cards = list(itertools.product(icon,value))
@@ -56,7 +58,7 @@ class Deck():
                 self.cards.remove(self.cards[0])
         else:
             print("None.")
-
+        
     def __str__(self):
         return f"Cards in hand: {self.cards}"
 

@@ -9,9 +9,10 @@ class Symbol:
         
         self.icon = icon
         if self.icon == '♥' or self.icon == '♦':
-            self.color = "Red"
+            color = "Red"
         else:
-            self.color = "Black"
+            color = "Black"
+        self.color = color
 
         # icon = "♥, ♦, ♣, ♠"
 
@@ -33,6 +34,6 @@ class Card(Symbol):
     def __str__(self):
         return f"{self.color} {self.value} {self.icon} "
 
-card = Card("5", "♥")
-print(card)
+#card = Card("5", "♥") 
+#print(card)
 

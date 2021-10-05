@@ -35,11 +35,13 @@ class Board():
                 self.active_cards.append(card)
                 j.cards.remove(card)
                 j.turn_count += 1
-            self.history_cards.append(self.active_cards)
+            self.history_cards.extend(self.active_cards) # To add more than one element in a list use extend()
             self.turn_count += 1
-            print(f"Turn count: {self.turn_count}")
-            print(f"Cards played this turn: {self.active_cards}")
-            print(f"Number of cards played in the game : {self.history_cards}")
+            print(f"Round : {self.turn_count} complete.")
+            print("Cards played this turn: ",end = "")
+            print(*self.active_cards, sep = ",")
+            print(f"Number of cards played in the game : {len(self.history_cards)} --> ", end = "")
+            print(*self.history_cards, sep = ",")
 
         print("No cards left !!")
 
