@@ -1,27 +1,38 @@
+import  typing
 # Parent Class
 class Symbol:
     """
     Class defining the color and icon of the card.
     """
 
-    def__init__(self, icon: str, color: str):
-        self.color = color
+    def __init__(self, icon: str):       
+        
         self.icon = icon
-        # "♥, ♦, ♣, ♠".split()
+        if self.icon == '♥' or self.icon == '♦':
+            self.color = "Red"
+        else:
+            self.color = "Black"
+
+        # icon = "♥, ♦, ♣, ♠"
 
     def __str__(self):
-        return f"{self.color} {self.icon}"
+        return f"{self.color} {self.icon} "
 
 # Child Class
 class Card(Symbol):
     """
     Class defining the value of the card.
     """
-    # value = "A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K".split()
+    # value = "A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K"
     
-    def __init__(self, value):
+    def __init__(self, value: str, icon: str):
+        super().__init__(icon)
         self.value = value
-        super().__init(color,icon)
+        
 
     def __str__(self):
-        return f"{self.color} {self.icon} {self.value}"
+        return f"{self.color} {self.value} {self.icon} "
+
+card = Card("5", "♥")
+print(card)
+
