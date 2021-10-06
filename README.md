@@ -30,7 +30,7 @@ Once you have installed either of the IDEs that supports python 3.9 you can run 
 terminal.
 
 ```javascript
-python3 main.py  
+python main.py  
 ```
 
 The game starts by running the above command in the terminal.
