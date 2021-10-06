@@ -1,6 +1,6 @@
 import typing
-from card import *
-from player import *
+from utils.card import *
+from utils.player import *
 
 
 class Board():
@@ -22,7 +22,6 @@ class Board():
             self.players.append(Player(name))
             i += 1
 
-        # call fill_deck()
         deck = Deck()
         deck.fill_deck()
         deck.shuffle()
@@ -47,8 +46,3 @@ class Board():
 
     def __str__(self) -> str:
         return f"Player: {self.players}, Turn: {self.turn_count}, Cards in hand: {self.active_cards}"
-
-board = Board()
-board.start_game()
-        
-

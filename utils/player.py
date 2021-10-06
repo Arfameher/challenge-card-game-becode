@@ -1,7 +1,8 @@
-from card import *
 import random
-from typing import List
 import typing
+from typing import List
+from utils.card import *
+
 
 class Player:
 
@@ -15,7 +16,7 @@ class Player:
     def play(self):
         print("\n")
         print(*self.cards, sep = ',')
-        number = int(input(f"{self.name}, you have {len(self.cards)} cards left, choose the card to be played : "))
+        number = int(input(f"{self.name}, you have {len(self.cards)} cards left, choose the card index number to be played : "))
         card = self.cards[number]
         self.history += [card]
         print(f"{self.name} Round : {self.turn_count} Played Card : {card.value} {card.icon}")
