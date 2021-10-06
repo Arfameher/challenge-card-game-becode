@@ -1,8 +1,7 @@
 # challenge-card-game-becode
 To build a card game in python
 <p align="center">
-  <img width="460" height ="300" src=![e3322deedb92ff1ff02244bd40d6bcad](https://user-images.githubusercontent.com/11362429/136193086-52ea6164-9851-4d9b-8c72-5445aa7862eb.jpg)
-)
+  <img width="460" height ="300" src=![e3322deedb92ff1ff02244bd40d6bcad](https://user-images.githubusercontent.com/11362429/136193594-f5d086e7-4dfd-45a0-8a12-226f042f9e47.jpg)
        </p>
 
 ### Description
