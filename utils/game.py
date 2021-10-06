@@ -15,6 +15,7 @@ class Board():
         self.turn_count = 0
         self.active_cards = []
         self.history_cards = []
+        #self.points = 0
 
     def start_game(self):
         """
@@ -49,12 +50,24 @@ class Board():
             self.history_cards.extend(self.active_cards) # To add more than one element in a list use extend()
             self.turn_count += 1
             print(f"\n\033[96mRound : {self.turn_count} complete.\033[0m")
+        
             print("Cards played this turn: ",end = "")
             print(*self.active_cards, sep = ",")
+            winning_card = self.active_cards[0]
+            n1 = 0
+            for n in range(1, len(self.active_cards)):
+                if str(winning_card.value) < str(self.active_cards[n].value):
+                    winning_card = self.active_cards[n]
+                    n1 = n
+            print(f"Winner of this round : {winning_card} played by {self.players[n1]}")
+            
             print(f"Number of cards played in the game : {len(self.history_cards)} --> ", end = "")
             print(*self.history_cards, sep = ",")
 
         print("No cards left !!")  # This is printed when all the cards are played.
+        print(f"Game points : ")
+        #for player in players:
+        #   print(f"{self.name} {player.self.points}")
 
     def __str__(self) -> str:
         return f"Player: {self.players}, Turn: {self.turn_count}, Cards in hand: {self.active_cards}"

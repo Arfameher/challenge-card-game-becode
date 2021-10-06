@@ -16,6 +16,7 @@ class Player:
         self.cards = []
         self.turn_count = 0
         self.number_of_cards = 0
+        self.points = 0
 
     def play(self):
         """ 
@@ -29,11 +30,13 @@ class Player:
         number = int(input(f"{self.name}, you have {len(self.cards)} cards left, choose the card index number to be played : "))
         card = self.cards[number] # card is set to the card value chosen by the player.
         self.history += [card]
-        print(f"{self.name} Round : {self.turn_count} Played Card : {card.value} {card.icon}")
+        print(f"{self.name} Round : {self.turn_count + 1} Played Card : {card.value} {card.icon}")
         return card 
 
     def __str__(self):
-        return f"Name: {self.name} Turn counts: {self.turn_count} Number of Cards: {self.number_of_cards} Cards played: {self.history}"
+        self.points += 1
+        return f"\033[96m{self.name} --> {self.points} Points\033[0m"
+        
 
 
 class Deck():
