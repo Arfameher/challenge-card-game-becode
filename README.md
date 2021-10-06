@@ -18,8 +18,8 @@ This is not an actual game being played. What I have is just that a deck of card
 ### Installation
 This is a basic python program that can be run on popular IDEs that support python
 Here are a few.
-- Visual Studio Code
-- PyCharm
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [PyCharm](https://www.jetbrains.com/pycharm/)
 
 ***
 ### Usage
